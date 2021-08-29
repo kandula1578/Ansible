@@ -1,0 +1,10 @@
+---
+- hosts: all
+  tasks:
+             - name: ping1
+               ping:
+                       data: "{{ item }}"
+               with_items:
+                       - sreenu
+             - name: ping2
+               ping:        

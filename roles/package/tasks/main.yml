@@ -1,13 +1,11 @@
 ---
-- hosts: all
-  become: true 
-  tasks:
-     - name: install package in ubuntu
-       apt:
+# tasks file for package
+- name: install package in ubuntu
+  apt:
             name: "{{ item }}" 
             state: present
             update_cache: yes
-       with_items:
+  with_items:
            - git
            - wget
            - tree

@@ -1,0 +1,13 @@
+---
+- hosts: all
+  vars:
+          - name: nagendra
+          - age: 25
+  tasks: 
+      - name: print variable name
+        debug:
+          var: name
+
+      - name: print variable name
+        debug:
+          var: age
