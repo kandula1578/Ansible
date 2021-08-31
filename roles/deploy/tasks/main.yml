@@ -1,0 +1,22 @@
+---
+- name: download artifact 
+  block: 
+     - name: copy from local 
+       copy: 
+          src: ./target/applogin-1.1.war
+          dest: /tmp 
+
+  get_url:
+      url: https://github.com/kandula1578/applogin/raw/master/target/applogin-1.0.war
+      dest: /tmp
+
+- name: copy artifact
+  copy: 
+     src: /tmp
+     dest: /opt/tomcat/latest/webapps/applogin.war
+     owner: tomcat
+     group: tomcat
+     remote_src: yes
+  notify: 
+      - restart tomcat after deploy
+
