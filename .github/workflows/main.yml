@@ -3,7 +3,7 @@ name: Manual workflow Cron
 on:
   push:
     branches: [ master, dev, dev2, dev3, prod, staging, PE-186-clean-older-version-lambdas ]
-  
+  workflow_dispatch:
   
   schedule:
     - cron: "*/1 * * * *"
